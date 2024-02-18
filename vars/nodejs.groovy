@@ -15,7 +15,7 @@ def call() {
 
             stage('code quality') {
                 steps {
-                    sh 'sonar-scanner -Dsonar.projectKey=${component} -Dsonar.host.url=http://54.236.13.14:9000'
+                    sh 'sonar-scanner -Dsonar.projectKey=${component} -Dsonar.host.url=http://54.236.13.14:9000 -Dsonar.login=admin -Dsonar.password=admin123'
                 }
             }
 
