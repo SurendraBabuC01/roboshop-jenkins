@@ -5,5 +5,5 @@
 
 - name: Multi Branch Pipelines
   ansible.builtin.include_tasks:
-    file: sjob.yml
+    file: mjob.yml
   loop: "{{mjobs}}"
