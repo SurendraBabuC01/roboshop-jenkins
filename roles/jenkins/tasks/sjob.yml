@@ -6,14 +6,11 @@
     url: http://172.31.33.79:8080
   register: jenkins_job_status
 
-- name: Debug
-  debug:
-    msg: "{{jenkins_job_status}}"
-
 - name: Copy XML File
   ansible.builtin.template:
     src: sjob.xml
     dest: /tmp/test.xml
+  when: jenkins_job_status.failed
 
 - name: Create Jenkins Jobs
   community.general.jenkins_job:
