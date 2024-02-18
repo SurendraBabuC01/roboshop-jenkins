@@ -10,7 +10,6 @@
   debug:
     msg: "{{jenkins_job_status}}"
 
-
 - name: Copy XML File
   ansible.builtin.template:
     src: sjob.xml
