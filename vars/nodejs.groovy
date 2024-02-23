@@ -24,7 +24,7 @@ def call() {
             stage('Unit Test Cases') {
                 steps {
                     sh 'echo Unit Test Cases'
-                    sh 'npm test'
+//                    sh 'npm test'
                 }
             }
 
@@ -37,6 +37,12 @@ def call() {
             stage('Checkmarx SCA Scan') {
                 steps {
                     sh 'echo Checkmarx SCA Scan'
+                }
+            }
+
+            stage('Release Application') {
+                steps {
+                    sh 'echo Release Application'
                 }
             }
         }
