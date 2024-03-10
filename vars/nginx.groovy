@@ -57,7 +57,7 @@ def call() {
 //                    sh 'curl -f -v -u admin:admin123 --upload-file ${component}-${TAG_NAME}.zip http://172.31.37.60:8081/repository/${component}/${component}-${TAG_NAME}.zip'
                     sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 127710927797.dkr.ecr.us-east-1.amazonaws.com'
                     sh 'docker build -t ${component} .'
-                    sh 'docker tag cart:latest 127710927797.dkr.ecr.us-east-1.amazonaws.com/${component}:${TAG_NAME}'
+                    sh 'docker tag ${component}:${TAG_NAME} 127710927797.dkr.ecr.us-east-1.amazonaws.com/${component}:${TAG_NAME}'
                     sh 'docker push 127710927797.dkr.ecr.us-east-1.amazonaws.com/${component}:${TAG_NAME}'
                 }
             }
