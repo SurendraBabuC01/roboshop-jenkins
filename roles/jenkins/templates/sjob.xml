@@ -11,7 +11,16 @@
     </actions>
     <description></description>
     <keepDependencies>false</keepDependencies>
-    <properties/>
+    <properties>
+    <jenkins.model.BuildDiscarderProperty>
+        <strategy class="hudson.tasks.LogRotator">
+            <daysToKeep>-1</daysToKeep>
+            <numToKeep>3</numToKeep>
+            <artifactDaysToKeep>-1</artifactDaysToKeep>
+            <artifactNumToKeep>-1</artifactNumToKeep>
+        </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+    </properties>
     <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@3867.v535458ce43fd">
         <scm class="hudson.plugins.git.GitSCM" plugin="git@5.2.1">
             <configVersion>2</configVersion>
